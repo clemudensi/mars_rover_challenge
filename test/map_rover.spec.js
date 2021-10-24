@@ -91,13 +91,15 @@ describe('Mars Rover', () => {
     it('lands rover within plateau', () => {
       expect(
         result([
-          'Plateau:5 5', 'Rover1 Landing:1 2 N', 'Rover1 Instructions:LMLMLMLMM'
-        ]))
+          'Plateau:5 5', 'Rover1 Landing:1 2 N', 'Rover Instructions:LMLMLMLMM'
+        ])
+      )
       .toEqual('1 3 N');
       expect(
         result([
-          'Plateau:5 5', 'Rover1 Landing:3 3 E', 'Rover1 Instructions:MMRMMRMRRM'
-        ]))
+          'Plateau:5 5', 'Rover1 Landing:3 3 E', 'Rover Instructions:MMRMMRMRRM'
+        ])
+      )
       .toEqual('5 1 E');
     });
 
@@ -105,22 +107,26 @@ describe('Mars Rover', () => {
       expect(() => {
         result([
           'Plateau:5 5', 'Rover Landing:1 2 T', 'Rover Instructions:LMLMLMLMM'
-        ])})
+        ])
+      })
       .toThrow('invalid landing cardinal');
       expect(() => {
         result([
           'Plateau:5 5', 'Rover Landing:6 2 N', 'Rover Instructions:LMLMLMLMM'
-        ])})
+        ])
+      })
       .toThrow('invalid landing coordinate on x-axis');
       expect(() => {
         result([
           'Plateau:5 5', 'Rover Landing:1 6 N', 'Rover Instructions:LMLMLMLMM'
-        ])})
+        ])
+      })
       .toThrow('invalid landing coordinate on y-axis');
       expect(() => {
         result([
           'Plateau:5 5', 'Rover Landing:4 3 E', 'Rover Instructions:MMRMMRMRRM'
-        ])})
+        ])
+      })
       .toThrow('invalid landing instructions');
     });
   });
