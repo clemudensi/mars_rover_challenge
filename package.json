@@ -1,0 +1,20 @@
+{
+  "name": "map_rover",
+  "version": "1.0.0",
+  "description": "Piloting a mars rover",
+  "main": "map_rover.js",
+  "type": "module",
+  "scripts": {
+    "start": "cd ./lib && node --experimental-specifier-resolution=node inputs.js",
+    "test": "jest"
+  },
+  "author": "Clement Udensi",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
+    "@babel/preset-env": "^7.15.8",
+    "jest": "^27.3.1"
+  }
+}
